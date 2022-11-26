@@ -1,0 +1,36 @@
+.product-attributes-container {
+  .attribute-title {
+    font-weight: bold;
+  }
+  .attribute-box {
+    color: black;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    transition: all 0.2s;
+  }
+
+  .attribute-values {
+    padding: 0.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .attribute-box.active {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+  }
+
+  .attribute-color {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid white;
+  }
+
+  .attribute-color.active {
+    border: 1px solid var(--primary);
+    border-collapse: separate;
+    border-spacing: 15px;
+  }
+}

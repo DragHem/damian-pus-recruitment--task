@@ -1,0 +1,31 @@
+.cart-container {
+  width: 90%;
+  margin: auto;
+
+  h3.cart-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2rem 0;
+  }
+
+  .cart-summary {
+    display: flex;
+    gap: 0.5rem;
+
+    div p {
+      margin: 0.3rem 0;
+    }
+
+    .cart-summary-values {
+      font-weight: bold;
+    }
+  }
+
+  button.order-btn {
+    margin-top: 1rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 8rem;
+    text-transform: uppercase;
+  }
+}

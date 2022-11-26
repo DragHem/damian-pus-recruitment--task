@@ -1,0 +1,17 @@
+.product-wrapper {
+  width: 90%;
+  margin: auto;
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin: 4rem 0;
+    text-transform: capitalize;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
