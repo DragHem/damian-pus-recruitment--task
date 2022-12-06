@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 
-import Nav from "./Components/Nav/Nav";
-import ProductList from "./Components/Product/ProductList";
-import ProductDescription from "./Components/Product/ProductDescription";
-import Cart from "./Components/Cart/Cart";
+import Nav from "./components/Nav/Nav";
+import ProductList from "./components/product/ProductList/ProductList";
+import ProductDescription from "./components/product/ProductDescription/ProductDescription";
+import Cart from "./components/Cart/Cart";
 
 import {
   BrowserRouter as Router,
@@ -13,11 +13,23 @@ import {
 } from "react-router-dom";
 
 import { ROUTES } from "./utils/routes";
+import NotFoundPage from "./components/pages/404";
+import CartContext from "./stores/CartContext";
+import Backdrop from "./ui/Backdrop";
 
-function App() {
-  return (
-    <>
+class App extends Component {
+  static contextType = CartContext;
+
+  render() {
+    const { chartIsOpen } = this.context;
+
+    chartIsOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+
+    return (
       <Router>
+        {chartIsOpen && <Backdrop />}
         <Nav />
 
         <Switch>
@@ -37,16 +49,11 @@ function App() {
             <ProductDescription />
           </Route>
 
-          <Route path={ROUTES.notFound} exact>
-            <div className="not-found">
-              <h2>Site not found...</h2>
-              <p>Chose correct category!</p>
-            </div>
-          </Route>
+          <NotFoundPage />
         </Switch>
       </Router>
-    </>
-  );
+    );
+  }
 }
 
 export default App;

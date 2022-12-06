@@ -1,0 +1,18 @@
+.product-wrapper {
+  width: 90%;
+  margin: auto;
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-top: 5rem;
+    margin-bottom: 6.8rem;
+    text-transform: capitalize;
+  }
+
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+}

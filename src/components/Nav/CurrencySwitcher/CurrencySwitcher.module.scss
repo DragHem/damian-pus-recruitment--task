@@ -1,0 +1,38 @@
+.currency {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+
+  .currency-box {
+    width: 2rem;
+  }
+
+  .currency-list {
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -75%;
+    width: 6rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eeeeee;
+        }
+      }
+    }
+  }
+}
+
+.currency:hover .currency-list {
+  display: block;
+}

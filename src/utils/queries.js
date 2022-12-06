@@ -9,6 +9,7 @@ export const PRODUCT_QUERY = (id) => gql`
             gallery
             description
             category
+            brand
             attributes {
                 id
                 name
@@ -26,7 +27,6 @@ export const PRODUCT_QUERY = (id) => gql`
                     symbol
                 }
             }
-            brand
         }
     }
 `;
@@ -40,24 +40,35 @@ export const CATEGORIES_QUERY = () => gql`
 `;
 
 export const PRODUCT_CATEGORY_QUERY = (category) => gql`
-    {
-        category(input: { title: "${category}" }) {
-            name
-            products {
-                id
-                name
-                gallery
-                inStock
-                prices {
-                    amount
-                    currency {
-                        label
-                        symbol
-                    }
-                }
-            }
+  {
+    category(input: { title: "${category}" }) {
+      name
+      products {
+        id
+        name
+        gallery
+        inStock
+        brand
+        attributes {
+          id
+          name
+          type
+          items {
+            displayValue
+            value
+            id
+          }
         }
+        prices {
+          amount
+          currency {
+            label
+            symbol
+          }
+        }
+      }
     }
+  }
 `;
 
 export const CURRENCIES_QUERY = () => gql`
