@@ -34,7 +34,7 @@ class ProductDescription extends Component {
       this.setState((state) => ({
         ...state,
 
-        [attribute.id]: attribute.items[0].value,
+        [attribute.id]: null,
       }));
     }
   }
@@ -68,6 +68,8 @@ class ProductDescription extends Component {
     const [price] = prices.filter((price) => price.currency.label === label);
 
     const { addToCart } = this.context;
+
+    const disableButton = !Object.values(this.state).includes(null) && inStock;
 
     document.title = `ShopLand - ${name}`;
 
@@ -106,7 +108,7 @@ class ProductDescription extends Component {
           </h3>
 
           <button
-            disabled={!inStock}
+            disabled={!disableButton}
             onClick={() =>
               addToCart({
                 ...productToAdd,

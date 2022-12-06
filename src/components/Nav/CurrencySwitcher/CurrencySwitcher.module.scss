@@ -16,6 +16,10 @@
     width: 6rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
+    .active-currency {
+      background-color: #eeeeee;
+    }
+
     ul {
       list-style: none;
       display: flex;

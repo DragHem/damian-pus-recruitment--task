@@ -14,14 +14,6 @@ class ProductItem extends Component {
       ...state,
       activeImg: this.props.product.gallery[0],
     }));
-
-    const attributes = this.props.product.attributes;
-    for (const attribute of attributes) {
-      this.setState((state) => ({
-        ...state,
-        [attribute.id]: attribute.items[0].value,
-      }));
-    }
   }
 
   addToCartHandler(e, product) {
@@ -64,14 +56,14 @@ class ProductItem extends Component {
             className={`${inStock ? "" : styles["out-of-stock"]}`}
           />
           {!inStock && <p>Out of stock</p>}
-          {inStock && (
+          {inStock && attributes.length === 0 && (
             <button onClick={(e) => this.addToCartHandler(e, productToAdd)}>
               <CartIcon />
             </button>
           )}
         </div>
         <div className={styles["product-item--title"]}>
-          <h4>{name}</h4>
+          <h4>{`${brand} ${name}`}</h4>
           {price && (
             <p>
               {price.currency.symbol} {price.amount}

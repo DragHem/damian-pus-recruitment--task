@@ -25,7 +25,9 @@ class ProductAttributes extends Component {
                         attrItem={attrItem}
                         productState={productState}
                         attrId={id}
-                        updateAttrHandler={updateAttrHandler}
+                        updateAttrHandler={
+                          updateAttrHandler ? updateAttrHandler : () => {}
+                        }
                         attrName={name}
                         index={index}
                       />
@@ -38,7 +40,9 @@ class ProductAttributes extends Component {
                         attrItem={attrItem}
                         productState={productState}
                         attrId={id}
-                        updateAttrHandler={updateAttrHandler}
+                        updateAttrHandler={
+                          updateAttrHandler ? updateAttrHandler : () => {}
+                        }
                         index={index}
                         cartBox={cartBox}
                       />

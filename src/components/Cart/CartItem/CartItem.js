@@ -56,7 +56,7 @@ class CartItem extends Component {
       cartBox,
     } = this.props;
 
-    const { activeCurrency, updateProduct, updateQuantity } = this.context;
+    const { activeCurrency, updateQuantity } = this.context;
 
     return (
       <div className={styles["cart-item"]}>
@@ -71,7 +71,6 @@ class CartItem extends Component {
             index={productIndex}
             productId={id}
             attributes={attributes}
-            updateAttrHandler={updateProduct}
             productState={productState}
             cartBox={cartBox}
           />
@@ -90,7 +89,7 @@ class CartItem extends Component {
 
           <div className={styles["cart-image"]}>
             <img src={gallery[this.state.imgIndex]} alt={name} />
-            {!cartBox && (
+            {!cartBox && gallery.length > 1 && (
               <div className={styles["cart-image-buttons"]}>
                 <button onClick={() => this.changeImgHandler("forward")}>
                   &lt;

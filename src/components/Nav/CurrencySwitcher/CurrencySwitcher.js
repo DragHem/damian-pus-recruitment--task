@@ -35,7 +35,13 @@ class CurrencySwitcher extends Component {
         <div className={styles["currency-list"]}>
           <ul>
             {currencies.map((currency) => (
-              <li key={currency.label} onClick={() => setCurrency(currency)}>
+              <li
+                key={currency.label}
+                onClick={() => setCurrency(currency)}
+                className={`${
+                  symbol === currency.symbol ? styles["active-currency"] : ""
+                } `}
+              >
                 {currency.symbol} {currency.label}
               </li>
             ))}
