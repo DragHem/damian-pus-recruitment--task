@@ -24,5 +24,3 @@ export const withQuery = (ComponentToWrap, query) => {
 
   return withRouter(WithQuery);
 };
-
-//@todo dodać adnotoacje po co to jest
