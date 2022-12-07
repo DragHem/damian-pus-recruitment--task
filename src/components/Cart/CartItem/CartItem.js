@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, memo } from "react";
 
 import styles from "./CartItem.module.scss";
 import ProductAttributes from "../../product/ProductAttributes/ProductAttributes";
@@ -106,4 +106,4 @@ class CartItem extends Component {
   }
 }
 
-export default CartItem;
+export default memo(CartItem);
