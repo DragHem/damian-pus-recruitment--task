@@ -13,9 +13,9 @@ export const withQuery = (ComponentToWrap, query) => {
         <Query query={query(param)} fetchPolicy={"no-cache"}>
           {({ loading, error, data }) => {
             if (loading) return;
-            if (error) return <p>Something gone wrong...</p>;
+            // if (error) return <p>Something gone wrong...</p>;
 
-            return <ComponentToWrap data={data} />;
+            return <ComponentToWrap data={data} error={error} />;
           }}
         </Query>
       );

@@ -15,6 +15,15 @@ class ProductList extends Component {
 
     document.title = `ShopLand - ${title} products`;
 
+    const { error } = this.props;
+
+    if (error)
+      return (
+        <ul>
+          <li>Can not load categories from server...</li>
+        </ul>
+      );
+
     const { category } = this.props.data;
 
     const productList = category.products.map((product) => (

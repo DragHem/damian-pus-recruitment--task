@@ -8,7 +8,15 @@ import { withQuery } from "../../HOC/withQuery";
 
 class CategoryList extends Component {
   render() {
+    const { error } = this.props;
     const { categories } = this.props.data;
+
+    if (error)
+      return (
+        <ul>
+          <li>Can not load categories from server...</li>
+        </ul>
+      );
 
     return (
       <ul className={styles.categories}>

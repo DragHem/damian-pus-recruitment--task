@@ -21,31 +21,29 @@ class Nav extends Component {
     const { itemsCount, toggleChartIsOpen, chartIsOpen } = this.context;
 
     return (
-      <>
-        <header className={styles["main-header"]}>
-          <nav>
-            <CategoryList />
+      <header className={styles["main-header"]}>
+        <nav>
+          <CategoryList />
 
-            <div>
-              <img src={Logo} alt="Shop Logo" />
+          <div>
+            <img src={Logo} alt="Shop Logo" />
+          </div>
+
+          <div className={styles["currency-chart-container"]}>
+            <CurrencySwitcher currencies={currencies} />
+
+            <div onClick={toggleChartIsOpen}>
+              <CartIcon
+                chartCount={itemsCount}
+                className={itemsCount ? styles["chart-indicator"] : ""}
+                onClick={toggleChartIsOpen}
+              />
             </div>
 
-            <div className={styles["currency-chart-container"]}>
-              <CurrencySwitcher currencies={currencies} />
-
-              <div onClick={toggleChartIsOpen}>
-                <CartIcon
-                  chartCount={itemsCount}
-                  className={itemsCount ? styles["chart-indicator"] : ""}
-                  onClick={toggleChartIsOpen}
-                />
-              </div>
-
-              {chartIsOpen && <CartBox />}
-            </div>
-          </nav>
-        </header>
-      </>
+            {chartIsOpen && <CartBox />}
+          </div>
+        </nav>
+      </header>
     );
   }
 }
