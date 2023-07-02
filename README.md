@@ -3,3 +3,5 @@ To run this project, clone it to any directory, then in this directory type "npm
 When all dependencies were installed, type "npm start" and app will be available at http://localhost:3000.
 
 Make sure You run server as well.
+
+Server repo - https://github.com/scandiweb/junior-react-endpoint/tree/master
